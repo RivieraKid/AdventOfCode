@@ -5,12 +5,10 @@ namespace _2015_02
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string inputFile = "input";
 
-            Int64 area = 0;
-            Int64 ribbon = 0;
             Int64 totalArea = 0;
             Int64 totalRibbon = 0;
             string line;
