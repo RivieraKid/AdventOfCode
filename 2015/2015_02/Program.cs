@@ -26,18 +26,13 @@ namespace _2015_02
 
         private static Int64 CalculateArea(string dims)
         {
-            Int64 length = 0;
-            Int64 width = 0;
-            Int64 height = 0;
-            Int64 extra = 0;
-
             Int64[] areas = new Int64[3];
 
             string[] arr = dims.Split('x');
 
-            Int64.TryParse(arr[0], out length);
-            Int64.TryParse(arr[1], out width);
-            Int64.TryParse(arr[2], out height);
+            Int64.TryParse(arr[0], out long length);
+            Int64.TryParse(arr[1], out long width);
+            Int64.TryParse(arr[2], out long height);
 
             areas[0] = length * width;
             areas[1] = width * height;
@@ -51,10 +46,6 @@ namespace _2015_02
 
         private static Int64 CalculateRibbon(string dims)
         {
-            Int64 length = 0;
-            Int64 width = 0;
-            Int64 height = 0;
-
             Int64[] lengths = new Int64[3];
 
             string[] arr = dims.Split('x');
