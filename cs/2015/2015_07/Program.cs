@@ -63,7 +63,7 @@ namespace _2015_07
             string d = "";
             string tmp = line;
             string[] parse = line.Split(" -> ");
-            Int16 val1 = 0;
+            UInt16 val1 = 0;
             //Int16 val2 = 0;
 
             d = parse[1];
@@ -72,11 +72,13 @@ namespace _2015_07
             //s1 = parse[0];
             s = parse[1];
 
-            Int16.TryParse(GetWireValue(s), out val1);
+            UInt16.TryParse(GetWireValue(s), out val1);
+
+            val1 = NOTHack(val1);
 
             //val1 = ~((val1 & 0xFF00) >> 8) + ~(val1 & 0xFF);
 
-            val1 = ~(UInt16)val1;
+            //val1 = ~(UInt16)val1;
 
             AddSignalToWire(val1.ToString(), d);
         }
@@ -192,6 +194,20 @@ namespace _2015_07
                 wires.Remove(wire);
             }
             wires.Add(wire, signal);
+        }
+
+        static UInt16 NOTHack(UInt16 val){
+            UInt16 res = 0;
+            UInt16 bitPosVal = 0;
+            UInt16 bitVal = 0;
+            for (UInt16 i = 0; i<16;i++){
+                bitPosVal = (UInt16)Math.Pow(2, i);
+                bitVal = (UInt16)((val & bitPosVal) >> i);
+                if (bitVal==0){
+                    res += bitPosVal;
+                }
+            }
+            return res;
         }
     }
 }
