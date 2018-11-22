@@ -5,20 +5,20 @@ namespace _2015_06
 {
     class Program
     {
-        static bool[,] lights = new bool[1000, 1000];
-        static int[,] brightness = new int[1000, 1000];
+        static readonly bool[,] lights = new bool[1000, 1000];
+        static readonly int[,] brightness = new int[1000, 1000];
 
-        static void Main(string[] args)
+        static void Main()
         {
             string line;
             System.IO.StreamReader file = new System.IO.StreamReader("input");
             while ((line = file.ReadLine()) != null)
             {
-                if (line.StartsWith("turn on"))
+                if (line.StartsWith("turn on", StringComparison.CurrentCulture))
                 {
                     TurnOnLights(line);
                 }
-                else if (line.StartsWith("turn off"))
+                else if (line.StartsWith("turn off", StringComparison.CurrentCulture))
                 {
                     TurnOffLights(line);
                 }
