@@ -6,7 +6,4 @@
     <RootNamespace>_2015_01</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.3.0" />
-  </ItemGroup>
 </Project>
