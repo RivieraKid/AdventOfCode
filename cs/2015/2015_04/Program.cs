@@ -6,16 +6,16 @@ namespace _2015_04
 {
     class Program
     {
-        static string input = "iwrupvqb";
-        static Int64 count = 0;
+        static readonly string input = "iwrupvqb";
+        static Int64 count;
 
-        static void Main(string[] args)
+        static void Main()
         {
             byte[] md5;
             string cksum = "";
 
             // For part two, just change the string below to "000000"
-            while (!(cksum.StartsWith("00000"))){
+            while (!(cksum.StartsWith("00000", StringComparison.CurrentCulture))){
                 count++;
                 md5 = ComputeMD5(input + count.ToString());
                 cksum = ByteArrayToString(md5);
