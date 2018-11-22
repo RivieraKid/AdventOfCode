@@ -6,7 +6,7 @@ namespace _2015_07
     class Program
     {
         static Dictionary<String, string> wires = new Dictionary<string, string>();
-        static void Main(string[] args)
+        static void Main()
         {
             string line;
             System.IO.StreamReader file = new System.IO.StreamReader("input");
@@ -63,7 +63,6 @@ namespace _2015_07
             string d = "";
             string tmp = line;
             string[] parse = line.Split(" -> ");
-            UInt16 val1 = 0;
             //Int16 val2 = 0;
 
             d = parse[1];
@@ -72,7 +71,7 @@ namespace _2015_07
             //s1 = parse[0];
             s = parse[1];
 
-            UInt16.TryParse(GetWireValue(s), out val1);
+            UInt16.TryParse(GetWireValue(s), out UInt16 val1);
 
             val1 = NOTHack(val1);
 
@@ -90,8 +89,6 @@ namespace _2015_07
             string d = "";
             string tmp = line;
             string[] parse = line.Split(" -> ");
-            Int16 val1 = 0;
-            Int16 val2 = 0;
 
             d = parse[1];
             tmp = parse[0];
@@ -99,8 +96,8 @@ namespace _2015_07
             s1 = parse[0];
             s2 = parse[1];
 
-            Int16.TryParse(GetWireValue(s1), out val1);
-            Int16.TryParse(s2, out val2);
+            Int16.TryParse(GetWireValue(s1), out Int16 val1);
+            Int16.TryParse(s2, out Int16 val2);
 
             for (Int16 i = val2; i > 0; i--)
             {
@@ -117,8 +114,6 @@ namespace _2015_07
             string d = "";
             string tmp = line;
             string[] parse = line.Split(" -> ");
-            Int16 val1 = 0;
-            Int16 val2 = 0;
 
             d = parse[1];
             tmp = parse[0];
@@ -126,8 +121,8 @@ namespace _2015_07
             s1 = parse[0];
             s2 = parse[1];
 
-            Int16.TryParse(GetWireValue(s1), out val1);
-            Int16.TryParse(s2, out val2);
+            Int16.TryParse(GetWireValue(s1), out Int16 val1);
+            Int16.TryParse(s2, out Int16 val2);
 
             for (Int16 i = val2; i > 0;i--){
                 val1 *= 2;
@@ -143,8 +138,6 @@ namespace _2015_07
             string d = "";
             string tmp = line;
             string[] parse = line.Split(" -> ");
-            Int16 val1 = 0;
-            Int16 val2 = 0;
 
             d = parse[1];
             tmp = parse[0];
@@ -152,8 +145,8 @@ namespace _2015_07
             s1 = parse[0];
             s2 = parse[1];
 
-            Int16.TryParse(GetWireValue(s1), out val1);
-            Int16.TryParse(GetWireValue(s2), out val2);
+            Int16.TryParse(GetWireValue(s1), out Int16 val1);
+            Int16.TryParse(GetWireValue(s2), out Int16 val2);
 
             AddSignalToWire((val1 | val2).ToString(), d);
         }
@@ -165,8 +158,6 @@ namespace _2015_07
             string d = "";
             string tmp = line;
             string[] parse = line.Split(" -> ");
-            Int16 val1 = 0;
-            Int16 val2 = 0;
 
             d = parse[1];
             tmp = parse[0];
@@ -174,8 +165,8 @@ namespace _2015_07
             s1 = parse[0];
             s2 = parse[1];
 
-            Int16.TryParse(GetWireValue(s1), out val1);
-            Int16.TryParse(GetWireValue(s2), out val2);
+            Int16.TryParse(GetWireValue(s1), out Int16 val1);
+            Int16.TryParse(GetWireValue(s2), out Int16 val2);
 
             AddSignalToWire((val1 & val2).ToString(), d);
         }
