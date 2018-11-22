@@ -5,8 +5,8 @@ namespace _2015_05
 {
     class Program
     {
-        static string[] _badWords= {"ab", "cd", "pq", "xy"};
-        static void Main(string[] args)
+        static readonly string[] _badWords= {"ab", "cd", "pq", "xy"};
+        static void Main()
         {
             Int64 vowels = 0;
             Int64 goodWords1 = 0;
