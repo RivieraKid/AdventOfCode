@@ -1,39 +1,21 @@
 ﻿using System;
-using CommandLine;
 
 namespace _2015_01
 {
     class Program
     {
-
-        public class Options {
-            [Option('i', "input", Required = true, HelpText = "Input ot the program")]
-            public String Input { get; set; }
-        }
-
-        static void Main(string[] args)
+        static void Main()
         {
-            String input = "";
             Int64 floor = 0;
             bool basementFound = false;
             Int64 basementPos = 0;
             Int64 pos = 1;
 
-            Parser.Default.ParseArguments<Options>(args)
-                  .WithParsed<Options>(o =>
-            {
-                if (o.Input != null)
-                {
-                    input = o.Input;
-                }
-                else
-                {
-                    Console.WriteLine($"Current Arguments: -v {o.Input}");
-                    Console.WriteLine("Quick Start Example!");
-                }
-            });
+            string line;
+            System.IO.StreamReader file = new System.IO.StreamReader("input");
+            line = file.ReadLine();
 
-            foreach (char c in input.ToCharArray()){
+            foreach (char c in line){
                 switch (c){
                     case '(':
                         floor++;
