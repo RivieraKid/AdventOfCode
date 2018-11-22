@@ -7,7 +7,7 @@ namespace _2015_03
     {
         static Dictionary<string, int> visitedHouses = new Dictionary<string, int>();
 
-        static void Main(string[] args)
+        static void Main()
         {
             int sX = 0;
             int sY = 0;
